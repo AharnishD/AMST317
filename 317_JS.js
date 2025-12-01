@@ -227,9 +227,6 @@ closePopupCountries.addEventListener("click", function() {
 
 
 
-
-
-
   
     // Close popup
     const closePopup = function(event) {
