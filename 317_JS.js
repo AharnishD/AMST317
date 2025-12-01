@@ -152,6 +152,19 @@ document.addEventListener("DOMContentLoaded", function() {
       due to showcasing Gandhi's principles of collective noncooperation, mass strikes,
       and mass moral confrontation--instead of violent confrontation.`
     }
+    const countriesGandhiImpactName = {
+      "USA": "United States",
+      "Africa": "South Africa",
+      "Asia": "Philippines",
+      "Europe": "Eastern Europe"
+    }
+
+    const countriesGandhiImpactImages = {
+      "USA": "https://th.bing.com/th/id/OIP.FtPWpqY51tD7kJL882NbIAHaEc?w=266&h=180&c=7&r=0&o=7&dpr=1.6&pid=1.7&rm=3",
+      "Africa": "https://th.bing.com/th/id/OIP.OoB0D-Hh2nP64JzKOg39aAHaE4?w=255&h=180&c=7&r=0&o=7&dpr=1.6&pid=1.7&rm=3",
+      "Asia": "https://th.bing.com/th/id/OIP.yHSFPtuZyxOsN7uu3V6CuQHaFh?w=254&h=189&c=7&r=0&o=7&dpr=1.6&pid=1.7&rm=3",
+      "Europe": "https://th.bing.com/th/id/OIP.EAlc1y0ELkNT1CY7XEyvqwHaE8?w=274&h=182&c=7&r=0&o=7&dpr=1.6&pid=1.7&rm=3"
+    }
 
 
 
@@ -192,8 +205,10 @@ popupButtonsCountries.forEach(button => {
     const sectionId = this.dataset.target;
 
     popupTextCountries.innerHTML = countriesGandhiImpact[sectionId];
-    popupTitleCountries.innerHTML = sectionsTitle[sectionId];
-    popupImgCountries.src = sectionsImg[sectionId] || "";
+    popupTitleCountries.innerHTML = countriesGandhiImpactName[sectionId];
+    popupImgCountries.src = countriesGandhiImpactImages[sectionId];
+
+
 
     popupOverlayCountries.style.display = "flex";
   });
