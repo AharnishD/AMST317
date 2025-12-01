@@ -1,0 +1,543 @@
+/* Scrollbar */
+/*::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 20px;
+    width: 10px;
+}*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+body {
+    background-color: rgba(44, 43, 46, 0.783);
+    margin: 0;
+    padding: 0;
+    font-family: poppins, sans-serif;
+    padding-bottom: 1000px;
+}
+
+button:hover{
+  cursor: pointer;
+  background-color: transparent; /* remove button's white background */
+  border: none;                  /* remove default button border */
+  padding: 0;  
+}
+button{
+  background-color: transparent;
+  border: none;
+}
+
+
+/*-------------
+    STARTING PAGE
+  --------------*/
+
+/* WRAPPER: contains the parallax image + text */
+.parallax {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+/* BACKGROUND IMAGE (moves slowly on scroll) */
+.parallax-bg {
+    position: absolute;
+    top: -20%;
+    left: 0;
+    width: 100%;
+    height: 140%;
+    background-image: url("https://parade.com/.image/w_3840,q_auto:good,c_limit/MTkwNTgwOTA5OTc1Njc2MDI5/gandhi-quotes-jpg.jpg");
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+
+    animation: fadeInImage 13s ease-in forwards;
+    transform: translateY(0);
+}
+
+/*-------------
+    ANIMATIONS 
+-------------*/ 
+@keyframes fadeInImage {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInText {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes slideUpFade {
+    from {
+        opacity: 0;
+        transform: translateY(40px); /* start lower */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* end in position */
+    }
+}
+
+@keyframes blinking-countries {
+  0%{
+    opacity: 1;
+  }
+  50%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+
+/* TEXT BLOCK OVER IMAGE (HERO TEXT) */
+.wrapper-text {
+    text-align: center;
+    line-height: 55px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    margin-bottom: 180px;
+    padding: 3rem 2rem;
+    border-radius: 0.25rem;
+    background-color: rgba(44, 43, 46, 0.783);
+
+    animation: fadeInText 2.6s ease-in forwards;
+}
+
+/* ----------------------
+   SCROLL DOWN INDICATOR
+   ---------------------- */
+
+.scrollDown {
+    position: fixed;
+    bottom: 27px;
+    left: 50%;
+    transform: translateX(-22.5px);
+    width: 45px;
+    height: 70px;
+    border: rgba(44, 43, 46, 0.783) solid 2px;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.scrollDown span {
+    background-color: rgba(44, 43, 46, 0.783);
+    width: 5px;
+    height: 10px;
+    border-radius: 30px;
+    margin-top: 10px;
+    position: relative;
+}
+
+.scrollDown span::before,
+.scrollDown span::after {
+    position: absolute;
+    content: '';
+    width: 15px;
+    height: 15px;
+    border-right: 2px solid rgba(44, 43, 46, 0.783);
+    border-top: 2px solid rgba(44, 43, 46, 0.783);
+    transform: rotate(135deg);
+    left: -6px;
+    opacity: 0;
+    animation: arrow 1.8s infinite linear;
+}
+
+.scrollDown span::after {
+    animation-delay: 0.8s;
+}
+
+@keyframes arrow {
+    0% { margin-top: 10px; opacity: 0; }
+    50% { margin-top: 25px; opacity: 1; }
+    100% { margin-top: 40px; opacity: 0; }
+}
+
+
+/* ----------------------
+   TIMELINE
+   ---------------------- */
+
+
+
+.timeline-heading {
+    color: azure;
+    position: absolute;
+    top: 0;                 /* puts title at the absolute top */
+    left: 50%;
+    translate: -50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+}
+
+.timeline-heading h1 {
+    font-size: 6rem;
+    margin: 0;
+    white-space: nowrap;
+}
+
+/* MAIN TIMELINE SECTION */
+.timeline-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 120px 0;
+    background-color: #111;
+}
+
+.timeline:not(.timeline-heading) {
+    width: 95%;
+    max-width: 1100px;
+    height: auto;
+
+    margin: 0 auto;
+    position: relative;
+
+    padding-top: 140px;     /* IMPORTANT – creates space for the heading */
+}
+
+.timeline ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* TIMELINE CARDS */
+.timeline ul li {
+    padding: 20px;
+    background-color: #1e1f22;
+    border-radius: 10px;
+    margin-bottom: 40px;
+}
+
+.timeline ul li:last-child {
+    margin-bottom: 0;
+}
+
+.timeline-content h1 {
+    color: rgb(163, 43, 43);
+    font-weight: 500;
+    font-size: 25px;
+    line-height: 30px;
+    margin-bottom: 10px;
+}
+
+.timeline-content p {
+    color: rgb(163, 43, 43);
+    font-size: 16px;
+    line-height: 30px;
+    font-weight: 300;
+}
+
+.timeline-content .date {
+    color: rgb(163, 43, 43);
+    font-size: 12px;
+    font-weight: 300;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+}
+
+/* DESKTOP VERSION */
+@media screen {
+  .timeline:before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 3px;
+    height: 93%;
+    background-color: rgb(163, 43, 43);
+  }
+
+  .timeline ul li {
+    width: 50%;
+    position: relative;
+    margin-bottom: 80px;
+  }
+
+  .timeline ul li:nth-child(odd) {
+    float: left;
+    clear: right;
+    transform: translateX(-30px);
+    border-radius: 20px 0px 20px 20px;
+  }
+
+  .timeline ul li:nth-child(even) {
+    float: right;
+    clear: left;
+    transform: translateX(30px);
+    border-radius: 0px 20px 20px 20px;
+  }
+
+  .timeline ul li:before {
+    content: "";
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background-color: rgb(163, 43, 43);
+    top: 0px;
+    z-index: 10;
+  }
+
+  .timeline ul li:nth-child(odd):before {
+    transform: translate(50%, -50%);
+    right: -30px;
+  }
+
+  .timeline ul li:nth-child(even):before {
+    transform: translate(-50%, -50%);
+    left: -30px;
+  }
+
+  .timeline-content .date {
+    position: absolute;
+    top: -30px;
+  }
+
+  .timeline ul li:hover:before {
+    background-color: gray;
+  }
+}
+
+
+
+/*------------------------
+    BUTTON FOR TIMELINE
+  ------------------------
+*/
+
+#popupOverlay {
+  display: none;
+  position: fixed;
+
+  width: 50vh;
+  height: 50vh;
+
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  background-color: rgba(44, 43, 46, 0.783);
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  border-radius: 8px;
+}
+
+
+
+#popupContent{
+  background-color: #1e1f22;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(44, 43, 46, 0.4);
+  text-align: center;
+
+  max-width: 500px;
+  padding: 20px;
+  border-radius: 8px;
+  overflow: hidden;
+
+  color: rgb(163, 43, 43);
+}
+#popupContent img {
+  position: relative;
+  max-width: 100%;    /* image will never exceed container width */
+  height: 20vh;       /* keeps correct aspect ratio */
+  border-radius: 8px; 
+}
+
+#popupTitle{
+  font-size: 30px;
+  margin: 4px;
+}
+
+#closePopupButton{
+  position: absolute;
+  top: 10px;                /* distance from top edge */
+  left: 10px;               /* distance from left edge */
+  background: transparent;
+  border: none;
+  font-size: 36px;          /* size of the X */
+  color: aliceblue;  
+}
+
+
+/*------------------------
+    INTERACTIVE MAP
+  ------------------------
+*/
+
+.world-map-container{
+  position: relative;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  padding: 1%;
+}
+
+/* FIX #1 — remove flex, add position:relative, center with auto margins */
+#world-map-layout {
+  position: relative;     /* pins now align to the SVG container */
+  width: fit-content;     /* container shrink-wraps the SVG's width */
+  height: auto;
+  margin: 0 auto;         /* keeps map centered */
+}
+
+.title-page{
+  position: absolute;
+  top: 240%;
+  left: 50%;                     /* center horizontally */
+  transform: translateX(-50%);   /* pull back half its width */
+  font-size: 36px;
+
+  
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  margin: 2% 0%;
+  padding: 0% 1%;
+}
+
+.title-page p{
+  font-size: 20px;
+  max-width: 500px;
+  margin: 1% auto;
+  line-height: 27px;
+}
+
+.pin{
+  background: #4362f8;
+  position: absolute;
+  width: 0.7em;
+  height: 0.7em;
+  border-radius: 50%;
+}
+
+.pin:before{
+  content: "";
+  background: #2745ba;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.pin span{
+  display: inline-block;
+  white-space: nowrap;
+  position: absolute;
+  left: 1.5em;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #fff;
+  border-radius: 3em;
+  padding: 0.3em 0.6em;
+  font-size: 0.9em;
+  animation:blinking-countries 2s ease-in-out infinite;
+}
+
+.USA {
+  top: 52%;
+  left: 32%;
+}
+
+.Africa {
+  top: 75%;
+  left: 52%;
+}
+
+.Europe {
+  top: 40%;
+  left: 67%;
+}
+
+.Asia {
+  top: 56%;
+  left: 63%;
+}
+
+/*-----------------------------
+    BUTTON FOR INTERACTIVE MAP
+  -----------------------------
+*/
+
+/* Popup Overlay */
+#popupOverlay-countries {
+  display: none;
+  position: fixed;
+
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 50vh;
+  height: 50vh;
+
+  background-color: rgba(44, 43, 46, 0.78);
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  border-radius: 8px;
+}
+
+/* Popup Box */
+#popupContent-countries {
+  background-color: #1e1f22;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(44, 43, 46, 0.4);
+  text-align: center;
+
+  width: 90%;
+  height: 90%;
+  overflow-y: auto;
+
+  color: rgb(163, 43, 43);
+  position: relative;
+}
+
+/* Popup Title */
+#popupTitle-countries {
+  font-size: 30px;
+  margin: 10px 0;
+}
+
+/* Popup Image */
+#popupContent-countries img {
+  max-width: 100%;
+  height: 20vh;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+
+/* Close Button */
+#closePopupButton-countries {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+
+  background: transparent;
+  border: none;
+  font-size: 36px;
+  color: aliceblue;
+  cursor: pointer;
+}

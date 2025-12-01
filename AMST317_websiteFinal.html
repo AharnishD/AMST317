@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="317_css.css">
+    <script src = "317_JS.js"></script>
+    <script src = "317_JS_functionCalls.js"></script>
+    <title>Document</title>
+</head>
+<body>
+
+  
+  <!-- First page of website -->
+  <div class="parallax">
+    <div class="parallax-bg"></div>
+    <div class="wrapper-text">
+        <h2>
+            "The most violent century of political conflict in human history, 
+            the 20th century, was also the century in which nonviolent resistance 
+            was transformed ... to an organized, collective, and strategic method
+            of struggle."
+        </h2>
+        <h4> - Kurt Schock</h4>
+    </div>
+</div>
+
+
+
+
+    <!-- Timeline portion -->
+    <div class="timeline-container">
+      <div class="timeline">
+        <div class="timeline-heading">
+          <h1>Gandhi's Impact Timeline</h1>
+        </div>
+
+      <ul>
+      <li>
+        <button class="openPopupButton" data-target="1906">
+          <div class="timeline-content">
+            <h3 class="date">1906-1915</h3>
+            <h1>Birth Of Satyagraha</h1>
+            <p>The former province of South Africa passed a racist law that humiliated Indians.
+              Gandhi gathered 3,000 Indians to display civil disobedience--no matter the consequence.
+              Gandhi then coined the long struggle of nonviolent resistance as "Satyagraha". 
+              Gandhi was continuously jailed, but the law was eventually abolished and Gandhi returned in 1915.
+            </p>
+          </div>
+        </button>
+      </li>
+
+      <li>
+        <button class="openPopupButton" data-target="1919">
+          <div class="timeline-content">
+            <h3 class="date">1919-1924</h3>
+            <h1>Rowlatt Satyagraha</h1>
+            <p>This was Gandhi's first large-scale nonviolent movement 
+              and established him as a national leader.
+              In 1920 he urged Indians to create their own goods and 
+              boycott British products. He was imprisoned from 1922-1924.
+            </p>
+          </div>
+        </button>
+      </li>
+
+      <li>
+        <button class="openPopupButton" data-target="1942">
+          <div class="timeline-content">
+            <h3 class="date">1942-1944</h3>
+            <h1>Quit India Movement</h1>
+            <p>Gandhi officially resigned as leader of the Indian National Congress 
+              but remained active to demand independence during World War II
+              in return for India's loyalty towards Britain. He swiftly begins mobilizing
+              with his "Quit India Movement".
+            </p>
+          </div>
+        </button>
+      </li>
+
+      <li>
+        <button class="openPopupButton" data-target="1947">
+          <div class="timeline-content">
+            <h3 class="date">1947</h3>
+            <h1>Success</h1>
+            <p>India gained independence from British rule, but split the subcontinent
+              into two lands: India and Pakistan; This greatly disappointed Gandhi
+              who, not only fought for India's independence from British rule, but also
+              fought for the unification of Hindus and Muslims. Because of this partition,
+              rioting between Muslims and Hindus break out in the affected areas; Consequently,
+              Gandhi returns to nonviolence in hopes to pledge peace. 
+            </p>
+          </div>
+        </button>
+      </li>
+
+      <li>
+        <button class="openPopupButton" data-target="1948">
+          <div class="timeline-content">
+            <h3 class="date">1948</h3>
+            <h1>Fall</h1>
+            <p>Gandhi was assassinated by Nathuram Godse, 
+              a young Hindu extremist, 
+              because of Gandhi's continuous efforts of 
+              uniting Muslims and Hindus.
+            </p>
+          </div>
+        </button>
+      </li>
+  </ul>
+
+  <!-- Popup Overlay -->
+  <div id="popupOverlay">
+    <div id="popupContent">
+      <div id="popupTitle"></div>
+      <img id="popupImg" src="" alt="">
+      <div id="popupText"></div>
+      <button id="closePopupButton">&times;</button>
+    </div>
+  </div>
+      </div>
+    </div>
+
+
+    <div class="title-page">
+      <h1>Gandhi's Global Impact</h1>
+      <p>
+        Gandhi's impact in South Africa and India has inspired the likes of people
+        all around the world.
+      </p>
+    </div>
+
+    <div class="world-map-container">
+      <div id="world-map-layout"></div>
+    
+      <!-- USA -->
+      <button class="openPopupButtonCountries" data-target="USA">
+        <div class="pin USA">
+          <span>United States</span>
+        </div>
+      </button>
+    
+      <!-- Africa -->
+      <button class="openPopupButtonCountries" data-target="Africa">
+        <div class="pin Africa">
+          <span>South Africa</span>
+        </div>
+      </button>
+    
+      <!-- Europe -->
+      <button class="openPopupButtonCountries" data-target="Europe">
+        <div class="pin Europe">
+          <span>Eastern Europe</span>
+        </div>
+      </button>
+    
+      <!-- Asia -->
+      <button class="openPopupButtonCountries" data-target="Asia">
+        <div class="pin Asia">
+          <span>Asia</span>
+        </div>
+      </button>
+    
+      <!-- COUNTRY POPUP -->
+      <div id="popupOverlay-countries">
+        <div id="popupContent-countries">
+          <button id="closePopupButton-countries">&times;</button>
+    
+          <div id="popupTitle-countries"></div>
+    
+          <img id="popupImg-countries" src="" alt="">
+    
+          <div id="popupText-countries"></div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+    <a href="" class="scrollDown">
+      <span></span>
+    </a>
+
+
+</body>
+</html>
+
+<!--
+<img src="https://colorcodes.imgix.net/4aNWbQXflJUTI
+OfB1YVKTl/7fa85376d10404124d8900f2383ba400/dark-red-color.png">
+
+<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAA1BMVEUTOJ0gO3PxAAAASElEQVR4nO3BgQAAAADDoPlTX+AIVQEAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwDcaiAAFXD1ujAAAAAElFTkSuQmCC>
