@@ -6,13 +6,16 @@ document.addEventListener("DOMContentLoaded", () => {
         const scrolled = window.scrollY;
 
         document.querySelector(".parallax-bg")
-            .style.transform = `translateY(${scrolled/3}px)`;
+          .style.transform = `translateY(${scrolled/3}px)`;
 
         document.querySelector(".timeline-container")
-            .style.transform = `translateY(${-scrolled/2}px)`;
+          .style.transform = `translateY(${-scrolled/2}px)`;
 
         document.querySelector(".world-map-container")
-            .style.transform = `translateY(${-scrolled/5}px)`;
+          .style.transform = `translateY(${-scrolled/5}px)`;
+        
+        document.querySelector(".fourth-section")
+          .style.transform = `translateY(${-scrolled/50}px)`;
     });
 
 });
