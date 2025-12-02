@@ -12,10 +12,8 @@ document.addEventListener("DOMContentLoaded", () => {
           .style.transform = `translateY(${-scrolled/2}px)`;
 
         document.querySelector(".world-map-container")
-          .style.transform = `translateY(${-scrolled/5}px)`;
+          .style.transform = `translateY(${-scrolled/4}px)`;
         
-        document.querySelector(".fourth-section")
-          .style.transform = `translateY(${-scrolled/50}px)`;
     });
 
 });
