@@ -174,9 +174,9 @@ button{
 
 .section-two {
   position: relative;
-  height: 300vh;
+  height: 200vh;
   width: 100%;
-  background-color: rgb(61, 6, 6);
+  background-color: #111;
   color: white;
 
 }
@@ -210,63 +210,169 @@ button{
   top: 20%;
 }
 
+
+
 /* CARD CAROUSEL FOR SECOND SECTION */
-.principles-card{
-  max-width: 1000px;
+/* -------------------------
+   SECOND SECTION CAROUSEL
+--------------------------*/
+
+#carousel-wrapper {
   position: relative;
-  margin: auto;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 80px;
 }
 
-.principle{
-  display: none;
-}
-
-.prev, .next{
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  width: auto;
-  padding: 16px;
-  margin-top: -22px;
+.carousel-btn {
+  font-size: 60px;
   color: white;
-  font-weight: bold;
-  font-size: 18px;
-  border-radius: 0 3px 3px 0;
+  cursor: pointer;
+  padding: 10px;
   user-select: none;
+  transition: 0.2s ease;
 }
 
-.next{
-  right: 0;
-  border-radius: 3px 0 0 3px;
+.carousel-btn:hover {
+  transform: scale(1.2);
+  color: rgb(255, 200, 200);
 }
 
-.prev:hover, .next:hover{
-  background-color: rgba(0,0,0,0.8);
+#carousel-container {
+  width: 80%;
+  max-width: 1200px;
+  overflow: hidden;
 }
 
-.numberText{
-  color: white;
-  font-size: 12px;
-  padding: 8px 12px;
-  position: absolute;
-  top: 0;
+#carousel-slider {
+  display: flex;
+  width: max-content;
+  transition: transform 0.5s ease;
 }
 
-.dot{
+.carousel-card {
+  min-width: 300px;
+  height: 260px;
+  margin: 0 20px;
+  padding: 25px;
+  background: #1e1f22;
+  border-radius: 15px;
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.carousel-card h3 {
+  color: rgb(255, 90, 90);
+  font-size: 28px;
+  margin-bottom: 12px;
+}
+
+.carousel-card p {
+  color: rgb(200, 150, 150);
+  font-size: 18px;
+  line-height: 24px;
+}
+/* ===== Gandhi Carousel (section two) ===== */
+.g-carousel-wrapper {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 60px 0 40px 0;
+  box-sizing: border-box;
+}
+
+/* Buttons (prev inside, next outside) */
+.g-carousel-btn {
+  position: relative;
+  z-index: 10;
+  background: transparent;
+  border: none;
+  font-size: 44px;
+  color: #fff;
   cursor: pointer;
-  height: 15px;
-  width: 15px;
-  margin: 0 2px;
-  background-color: #bbb;
-  border-radius: 50%;
-  display: inline-block;
-  transition: background-color 0.6s ease;
+  padding: 8px;
+  user-select: none;
+  transition: transform .15s ease;
+}
+.g-carousel-btn:hover { transform: scale(1.1); }
+
+/* Prev stays just inside the viewport */
+.g-carousel-btn.prev {
+  margin-right: 12px;
 }
 
-active, .dot:hover{
-  background-color: #717171;
+/* Next is visually outside the viewport (move more to the right) */
+.g-carousel-btn.next {
+  margin-left: 18px;      /* moves next button further outside */
 }
 
+/* Viewport masks overflow */
+.g-carousel-viewport {
+  width: 78%;              /* adjust width as needed */
+  max-width: 1200px;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* Slider row */
+.g-carousel-slider {
+  display: flex;
+  gap: 24px;               /* space between cards */
+  transition: transform 0.5s cubic-bezier(.22,.9,.31,1);
+  will-change: transform;
+  padding: 12px 6px;      /* small internal padding */
+}
+
+/* Individual card */
+.g-card {
+  min-width: 280px;        /* card visible width */
+  flex: 0 0 auto;          /* don't shrink/grow — fixed base width */
+  height: 260px;
+  border-radius: 14px;
+  background: #1e1f22;
+  padding: 22px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.45), inset 0 1px 0 rgba(255,255,255,0.02);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+/* Typography inside card */
+.g-card h3 {
+  margin-bottom: 10px;
+  color: rgb(255, 90, 90);
+  font-size: 22px;
+}
+.g-card p {
+  color: rgb(200, 150, 150);
+  line-height: 1.4;
+  font-size: 16px;
+  margin: 0;
+}
+
+/* Responsive tweaks */
+@media (max-width: 980px) {
+  .g-carousel-viewport { width: 90%; }
+  .g-card { min-width: 240px; height: 220px; }
+  .g-carousel-btn { font-size: 36px; }
+}
+
+@media (max-width: 640px) {
+  .g-carousel-wrapper { flex-direction: row; gap: 8px; }
+  .g-carousel-viewport { width: 86%; }
+  .g-card { min-width: 200px; height: 200px; }
+  .g-carousel-btn.prev { margin-right: 6px; }
+  .g-carousel-btn.next { margin-left: 6px; }
+}
 
 
 

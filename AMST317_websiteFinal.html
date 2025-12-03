@@ -12,7 +12,6 @@
 <body>
 
   
-  <!-- First page of website -->
 <div class="parallax">
   <div class="parallax-bg"></div>
   <div class="wrapper-text">
@@ -41,34 +40,63 @@
     His legacy continues to inspire and act as the framework for non-violent movements worldwide;
     Even decades later, leaders such as Martin Luther King Jr. and Nelson Mandela adopted Gandhi's principles in their own struggles for civil rights and social justice.
   </h3>
+  
+
   <h2 id="principles"> Gandhi's 6 Principles: </h2>
 
-  <div class="principles-card">
-    <div class="principle">
-      <div class="numberText"></div>
-      <img src="">
+  <!-- START: Gandhi card carousel -->
+<div id="g-carousel-wrapper" class="g-carousel-wrapper">
+
+  <button id="g-carousel-prev" class="g-carousel-btn prev" aria-label="Previous slide">
+    &#10094;
+  </button>
+
+  <div id="g-carousel-viewport" class="g-carousel-viewport">
+    <div id="g-carousel-slider" class="g-carousel-slider">
+
+      <article class="g-card">
+        <h3>Nonviolence</h3>
+        <p>Ahimsa — rejecting violence in all forms.</p>
+      </article>
+
+      <article class="g-card">
+        <h3>Truth</h3>
+        <p>Satya — commitment to honesty and moral courage.</p>
+      </article>
+
+      <article class="g-card">
+        <h3>Self-Sacrifice</h3>
+        <p>Brahmacharya — Willingness to suffer without retaliation.</p>
+      </article>
+
+      <article class="g-card">
+        <h3>Non-violent Resistance</h3>
+        <p>Satyagraha — Resisting injustice through mass civil disobedience. </p>
+      </article>
+
+      <article class="g-card">
+        <h3>Self-Rule</h3>
+        <p>Swaraj — Gandhi wanted self-governance for individuals and communities.</p>
+      </article>
+
+      <article class="g-card">
+        <h3>Well-being of all</h3>
+        <p>Sarvodaya — A life devoted to serving humanity.</p>
+      </article>
+
     </div>
-
-  <div class="principle">
-    <div class="numberText"></div>
-    <img src="">
-    </div>
-
-  <div class="principle">
-    <div class="numberText"></div>
-    <img src="">
   </div>
 
-    <a class="prev" onclick="plusSlides(-1)"></a>
-    <a class="next" onclick="plusSlides(1)"></a>
-  </div>
-  <br>
+  <button id="g-carousel-next" class="g-carousel-btn next" aria-label="Next slide">
+    &#10095;
+  </button>
 
-  <div class="dots">
-    <span class="dot" onClick="currentSlide(1)"></span>
-    <span class="dot" onClick="currentSlide(2)"></span>
-    <span class="dot" onClick="currentSlide(3)"></span>
-  </div>
+</div>
+<!-- END: Gandhi card carousel -->
+
+
+
+
 
 </div>
 
@@ -228,7 +256,7 @@
 
     <a href="" class="scrollDown">
       <span></span>
-    </a>
+    </a> 
 
 
 </body>

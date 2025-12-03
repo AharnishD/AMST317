@@ -8,6 +8,9 @@ document.addEventListener("DOMContentLoaded", () => {
         document.querySelector(".parallax-bg")
           .style.transform = `translateY(${scrolled/3}px)`;
 
+        document.querySelector(".section-two")
+          .style.transform = `translateY(${-scrolled/3}px)`;
+
         document.querySelector(".timeline-container")
           .style.transform = `translateY(${-scrolled/2}px)`;
 
@@ -254,6 +257,116 @@ closePopupCountries.addEventListener("click", function() {
 });
   
 
+document.addEventListener("DOMContentLoaded", function () {
+  const viewport = document.getElementById("g-carousel-viewport");
+  const slider = document.getElementById("g-carousel-slider");
+  const prevBtn = document.getElementById("g-carousel-prev");
+  const nextBtn = document.getElementById("g-carousel-next");
 
+  if (!viewport || !slider || !prevBtn || !nextBtn) {
+    console.warn("Gandhi carousel: missing elements");
+    return;
+  }
 
+  let currentX = 0;
+  let maxTranslate = 0; // positive value - max amount we can translate to the left (in px)
+  let cardGap = 24;     // keep in sync with CSS gap
+  let resizeObserver;
 
+  function updateMeasurements() {
+    // total scrollable width minus viewport width
+    const totalWidth = slider.scrollWidth;
+    const visibleWidth = viewport.clientWidth;
+    maxTranslate = Math.max(0, totalWidth - visibleWidth);
+    // clamp currentX
+    currentX = clamp(currentX, -maxTranslate, 0);
+    applyTransform();
+    updateButtonsState();
+  }
+
+  function clamp(v, lo, hi) {
+    if (v < lo) return lo;
+    if (v > hi) return hi;
+    return v;
+  }
+
+  function applyTransform() {
+    slider.style.transform = `translateX(${Math.round(currentX)}px)`;
+  }
+
+  function updateButtonsState() {
+    // disable prev when at left-most (currentX === 0)
+    if (Math.abs(currentX) < 1) {
+      prevBtn.classList.add("disabled");
+      prevBtn.setAttribute("aria-disabled", "true");
+    } else {
+      prevBtn.classList.remove("disabled");
+      prevBtn.setAttribute("aria-disabled", "false");
+    }
+
+    // disable next when fully scrolled
+    if (Math.abs(currentX) >= maxTranslate - 1) {
+      nextBtn.classList.add("disabled");
+      nextBtn.setAttribute("aria-disabled", "true");
+    } else {
+      nextBtn.classList.remove("disabled");
+      nextBtn.setAttribute("aria-disabled", "false");
+    }
+  }
+
+  function slideNext() {
+    // Move by one card width (or visible width if single card fits)
+    const firstCard = slider.children[0];
+    if (!firstCard) return;
+
+    const cardStyle = window.getComputedStyle(firstCard);
+    const cardWidth = firstCard.getBoundingClientRect().width;
+    const gap = parseFloat(window.getComputedStyle(slider).gap) || cardGap;
+    const moveBy = Math.round(cardWidth + gap);
+
+    // calculate newX (can't be less than -maxTranslate)
+    const proposed = clamp(currentX - moveBy, -maxTranslate, 0);
+    // if change is negligible (we're near end), snap to end
+    if (Math.abs(proposed + maxTranslate) < 2) {
+      currentX = -maxTranslate;
+    } else {
+      currentX = proposed;
+    }
+    applyTransform();
+    updateButtonsState();
+  }
+
+  function slidePrev() {
+    const firstCard = slider.children[0];
+    if (!firstCard) return;
+
+    const cardWidth = firstCard.getBoundingClientRect().width;
+    const gap = parseFloat(window.getComputedStyle(slider).gap) || cardGap;
+    const moveBy = Math.round(cardWidth + gap);
+
+    currentX = clamp(currentX + moveBy, -maxTranslate, 0);
+    // if currentX very near 0, set exactly 0
+    if (Math.abs(currentX) < 2) currentX = 0;
+    applyTransform();
+    updateButtonsState();
+  }
+
+  prevBtn.addEventListener("click", slidePrev);
+  nextBtn.addEventListener("click", slideNext);
+
+  // Recalculate on resize
+  window.addEventListener("resize", updateMeasurements);
+
+  // Also try ResizeObserver on the slider or viewport for more reliability
+  if ("ResizeObserver" in window) {
+    resizeObserver = new ResizeObserver(updateMeasurements);
+    resizeObserver.observe(viewport);
+    resizeObserver.observe(slider);
+  } else {
+    // fallback
+    setTimeout(updateMeasurements, 300);
+  }
+
+  // initial measurement after images/fonts load
+  window.requestAnimationFrame(updateMeasurements);
+});
