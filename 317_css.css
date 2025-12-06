@@ -333,7 +333,7 @@ button{
 /* Individual card */
 .g-card {
   min-width: 280px;        /* card visible width */
-  flex: 0 0 auto;          /* don't shrink/grow — fixed base width */
+  flex: 0 0 auto;          /* doesn't shrink/grow — fixed base width */
   height: 260px;
   border-radius: 14px;
   background: #1e1f22;
@@ -348,31 +348,26 @@ button{
 
 /* Typography inside card */
 .g-card h3 {
-  margin-bottom: 10px;
+  margin-bottom: 4px;
   color: rgb(255, 90, 90);
   font-size: 22px;
 }
 .g-card p {
+  margin-top: 4px;
   color: rgb(200, 150, 150);
   line-height: 1.4;
   font-size: 16px;
-  margin: 0;
 }
 
-/* Responsive tweaks */
-@media (max-width: 980px) {
-  .g-carousel-viewport { width: 90%; }
-  .g-card { min-width: 240px; height: 220px; }
-  .g-carousel-btn { font-size: 36px; }
+.g-card img {
+  max-width: 100%;
+  max-height: 120px;
+  height: auto;
+  display: block;
+  margin: 4px;
+  object-fit: contain;
 }
 
-@media (max-width: 640px) {
-  .g-carousel-wrapper { flex-direction: row; gap: 8px; }
-  .g-carousel-viewport { width: 86%; }
-  .g-card { min-width: 200px; height: 200px; }
-  .g-carousel-btn.prev { margin-right: 6px; }
-  .g-carousel-btn.next { margin-left: 6px; }
-}
 
 
 
