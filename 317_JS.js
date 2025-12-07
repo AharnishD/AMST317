@@ -1,26 +1,26 @@
 // Wait until ALL HTML elements are created (the DOM is ready)
 // This prevents errors if JavaScript tries to select elements before they exist.
-document.addEventListener("DOMContentLoaded", () => {
-/* TRUE PARALLAX — Moves background at scroll speed */
-    window.addEventListener("scroll", () => {
-        const scrolled = window.scrollY;
+document.addEventListener("DOMContentLoaded", function () {
+  /* TRUE PARALLAX — Moves background at scroll speed */
+  window.addEventListener("scroll", () => {
+    const scrolled = window.scrollY;
 
-        document.querySelector(".parallax-bg")
-          .style.transform = `translateY(${scrolled/3}px)`;
+    document.querySelector(".parallax-bg")
+    .style.transform = `translateY(${scrolled / 3}px)`;
 
-        document.querySelector(".section-two")
-          .style.transform = `translateY(${-scrolled/3}px)`;
+    document.querySelector(".section-two")
+    .style.transform = `translateY(${-scrolled / 3}px)`;
 
-        document.querySelector(".timeline-container")
-          .style.transform = `translateY(${-scrolled/2}px)`;
+    document.querySelector(".timeline-container")
+    .style.transform = `translateY(${-scrolled / 2}px)`;
 
-        document.querySelector(".world-map-container")
-          .style.transform = `translateY(${-scrolled/4}px)`;
-        
-    });
+    document.querySelector(".world-map-container")
+    .style.transform = `translateY(${-scrolled / 4}px)`;
 
+    document.querySelector(".parallax-bg-vvvend")
+    .style.transform = `translateY(${-scrolled / 2}px)`;
+  });
 });
-
 
 
 
@@ -263,10 +263,6 @@ document.addEventListener("DOMContentLoaded", function () {
   const prevBtn = document.getElementById("g-carousel-prev");
   const nextBtn = document.getElementById("g-carousel-next");
 
-  if (!viewport || !slider || !prevBtn || !nextBtn) {
-    console.warn("Gandhi carousel: missing elements");
-    return;
-  }
 
   let currentX = 0;
   let maxTranslate = 0; // positive value - max amount we can translate to the left (in px)
@@ -295,22 +291,24 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function updateButtonsState() {
-    // disable prev when at left-most (currentX === 0)
+    // disable prev/next button when at left-most (currentX == 0)
     if (Math.abs(currentX) < 1) {
       prevBtn.classList.add("disabled");
       prevBtn.setAttribute("aria-disabled", "true");
+      prevBtn.style.visibility = "hidden";
     } else {
       prevBtn.classList.remove("disabled");
       prevBtn.setAttribute("aria-disabled", "false");
+      prevBtn.style.visibility = "visible";
     }
-
-    // disable next when fully scrolled
     if (Math.abs(currentX) >= maxTranslate - 1) {
       nextBtn.classList.add("disabled");
       nextBtn.setAttribute("aria-disabled", "true");
+      nextBtn.style.visibility = "hidden";
     } else {
       nextBtn.classList.remove("disabled");
       nextBtn.setAttribute("aria-disabled", "false");
+      nextBtn.style.visibility = "visible";
     }
   }
 
@@ -319,7 +317,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const firstCard = slider.children[0];
     if (!firstCard) return;
 
-    const cardStyle = window.getComputedStyle(firstCard);
     const cardWidth = firstCard.getBoundingClientRect().width;
     const gap = parseFloat(window.getComputedStyle(slider).gap) || cardGap;
     const moveBy = Math.round(cardWidth + gap);
