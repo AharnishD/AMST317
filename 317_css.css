@@ -755,39 +755,50 @@ button{
     ENDING PAGE
   --------------*/
 .parallax-end {
-    position: relative;
-    top: 100%;
-    height: 100vh;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    margin-top: -30%;
+  position: relative;
+  top: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  margin-top: -30%;
 }
 
 
 .parallax-bg-end {
-    position: absolute;   
-    top: 0;
-    left: 0;
-    width: 100%;          
-    height: auto;         
-    background-size: cover;
-    background-position: center;
-    z-index: -1;
-    object-fit: scale-down cover;
+  position: absolute;   
+  top: 0;
+  left: 0;
+  width: 100%;          
+  height: auto;         
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+  object-fit: scale-down cover;
 }
 
 
 
 /* TEXT BLOCK OVER IMAGE (HERO TEXT) */
 .wrapper-text-end {
-    text-align: center;
-    line-height: 55px;
-    letter-spacing: 5px;
-    text-transform: uppercase;
-    margin-bottom: 180px;
-    padding: 3rem 2rem;
-    border-radius: 0.25rem;
-    background-color: rgba(44, 43, 46, 0.783);
+  text-align: center;
+  line-height: 55px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  margin-bottom: 180px;
+  padding: 3rem 2rem;
+  border-radius: 0.25rem;
+  background-color: rgba(44, 43, 46, 0.783);
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: rgb(72, 66, 99);
+  color: white;
+  text-align: center;
+  padding: 10px 0;
 }
