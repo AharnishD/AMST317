@@ -793,12 +793,13 @@ button{
 }
 
 .footer {
-  position: fixed;
+  position: relative;
   left: 0;
   bottom: 0;
   width: 100%;
-  background-color: rgb(72, 66, 99);
+  background-color: rgba(44, 43, 46, 0.783);
   color: white;
   text-align: center;
   padding: 10px 0;
+  z-index: 1;
 }
