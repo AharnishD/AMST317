@@ -792,8 +792,8 @@ button{
 
 .conclusion-page {
   position: relative;
-  bottom: 53vh;
-  height: 70vh;
+  bottom: 50vh;
+  height: 75vh;
   background-color: #111;
   color: white;
   display: flex;
@@ -811,7 +811,12 @@ button{
   white-space: normal; /* allows wrapping */
 }
 
-
+#conclusion-page-text{
+  text-align: center;
+  font-size: 1em;
+  color: white;
+  white-space: normal;
+}
 
 /*-------------
     ENDING PAGE
