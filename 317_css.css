@@ -176,14 +176,14 @@ button{
   height: 250vh;
   width: 100%;
   background-color: #111;
-  color: white;
+  color: aliceblue;
 
 }
 
 .section-two h1 {
   text-align: center;
   font-size: 80px;
-  color: white;
+  color: aliceblue;
   white-space: normal; /* allows wrapping */
 }
 
@@ -258,7 +258,7 @@ button{
 
 .carousel-btn {
   font-size: 60px;
-  color: white;
+  color: aliceblue;
   cursor: pointer;
   padding: 10px;
   user-select: none;
@@ -716,6 +716,11 @@ button{
   left: 61%;
 }
 
+.Brazil{
+  top:135%;
+  left: 38%;
+}
+
 /*-----------------------------
     BUTTON FOR INTERACTIVE MAP
   -----------------------------
@@ -795,7 +800,7 @@ button{
   bottom: 50vh;
   height: 75vh;
   background-color: #111;
-  color: white;
+  color: aliceblue;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -807,14 +812,14 @@ button{
 #conclusion-page-title{
   text-align: center;
   font-size: 80px;
-  color: white;
+  color: aliceblue;
   white-space: normal; /* allows wrapping */
 }
 
 #conclusion-page-text{
   text-align: center;
   font-size: 1em;
-  color: white;
+  color: aliceblue;
   white-space: normal;
 }
 

@@ -154,20 +154,28 @@ document.addEventListener("DOMContentLoaded", function() {
       
       In Czechoslovakia (1989) the Velvet Revolution was deemed peaceful, hence "velvet",
       due to showcasing Gandhi's principles of collective noncooperation, mass strikes,
-      and mass moral confrontation--instead of violent confrontation.`
+      and mass moral confrontation--instead of violent confrontation.`,
+
+      "Brazil": `Gandhi has become such a global symbol for peace; Brazil implemented a statue of him in Rio De Janeiro. 
+      The statue strengthens the cultural ties between India and Brazil. Brazil even has a park reserved for meditation and 
+      yoga; reflecting Gandhi's principles of non-violence and spiritual discipline. The park includes detailed information about Gandhi and 
+      his disciplines.`
     }
     const countriesGandhiImpactName = {
       "USA": "United States",
       "Africa": "South Africa",
       "Asia": "Philippines",
-      "Europe": "Eastern Europe"
+      "Europe": "Eastern Europe",
+      "Brazil": "Brazil"
+
     }
 
     const countriesGandhiImpactImages = {
       "USA": "https://th.bing.com/th/id/OIP.FtPWpqY51tD7kJL882NbIAHaEc?w=266&h=180&c=7&r=0&o=7&dpr=1.6&pid=1.7&rm=3",
       "Africa": "https://th.bing.com/th/id/OIP.OoB0D-Hh2nP64JzKOg39aAHaE4?w=255&h=180&c=7&r=0&o=7&dpr=1.6&pid=1.7&rm=3",
       "Asia": "https://th.bing.com/th/id/OIP.yHSFPtuZyxOsN7uu3V6CuQHaFh?w=254&h=189&c=7&r=0&o=7&dpr=1.6&pid=1.7&rm=3",
-      "Europe": "https://th.bing.com/th/id/OIP.EAlc1y0ELkNT1CY7XEyvqwHaE8?w=274&h=182&c=7&r=0&o=7&dpr=1.6&pid=1.7&rm=3"
+      "Europe": "https://th.bing.com/th/id/OIP.EAlc1y0ELkNT1CY7XEyvqwHaE8?w=274&h=182&c=7&r=0&o=7&dpr=1.6&pid=1.7&rm=3",
+      "Brazil": "https://images.pexels.com/photos/9304308/pexels-photo-9304308.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
     }
 
 
@@ -252,7 +260,6 @@ closePopupCountries.addEventListener("click", function() {
     // Insert the loaded world.html/SVG into the page element with its ID
     document.getElementById("world-map-layout").innerHTML = data;
   });
-  
   
 });
   
