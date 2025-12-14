@@ -784,6 +784,34 @@ button{
 }
 
 
+/*
+----------------------
+  CONCLUSION PAGE
+-----------------------
+*/
+
+.conclusion-page {
+  position: relative;
+  bottom: 53vh;
+  height: 70vh;
+  background-color: #111;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+#conclusion-page-title{
+  text-align: center;
+  font-size: 80px;
+  color: white;
+  white-space: normal; /* allows wrapping */
+}
+
+
 
 /*-------------
     ENDING PAGE
@@ -826,6 +854,10 @@ button{
   background-color: rgba(44, 43, 46, 0.783);
 }
 
+
+/*-------------
+    FOOTER
+  --------------*/
 .footer {
   position: relative;
   left: 0;

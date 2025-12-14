@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
     document.querySelector(".world-map-container")
     .style.transform = `translateY(${-scrolled / 4}px)`;
 
-    document.querySelector(".parallax-bg-vvvend")
+    document.querySelector(".parallax-bg-end")
     .style.transform = `translateY(${-scrolled / 2}px)`;
   });
 });
@@ -79,7 +79,7 @@ document.addEventListener("DOMContentLoaded", function() {
       "1906": "https://images.hindustantimes.com/Images/popup/2014/9/2809brimg_1.jpg",
       "1919": "https://cdn.britannica.com/72/200572-050-448D5045/Mahatma-Gandhi-1930.jpg?w=740&h=416&c=crop",
       "1942": "https://static.toiimg.com/thumb/msid-59987915,width-1280,height-720,resizemode-4/59987915.jpg",
-      "1947": "https://npr.brightspotcdn.com/dims4/default/cbc5470/2147483647/strip/true/crop/3147x2342+0+0/resize/880x655!/quality/90/?url=https%3A%2F%2Fmedia.npr.org%2Fassets%2Fimg%2F2015%2F06%2F09%2Fap133750321373_custom-806494c66f82c2ada98c5e737f767a360e4e7049.jpg",
+      "1947": "https://im.indiatimes.in/media/content/2019/Aug/partition_1565680444_725x725.jpg",
       "1948": "https://fl-i.thgim.com/public/incoming/icken3/article65721521.ece/alternates/FREE_1200/30_YT_gandhi.jpg"
     };
     const sectionsTitle = {
